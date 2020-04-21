@@ -11,7 +11,7 @@
                 ion-col
             </ion-col>
             <ion-col class="ion-align-self-center">
-                ion-col
+                <a href="#">Account</a>
             </ion-col>
         </ion-row>
     </ion-grid>
