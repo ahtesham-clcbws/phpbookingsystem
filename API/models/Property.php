@@ -1,32 +1,36 @@
 <?php
-class Business
+class Property
 {
   // DB stuff
   private $conn;
-  private $table = 'business';
+  private $table = 'place';
 
   // Post Properties
   public $id;
   public $userID;
-  public $verified;
-  public $catid;
-  public $category;
-  public $catslug;
   public $title;
-  public $slug;
+  public $placeType;
+  public $placeKind;
+  public $dedicatedSpace;
+  public $guests;
+  public $bedrooms;
+  public $bathrooms;
   public $description;
-  public $image;
-  public $contactPhone;
-  public $contactEmail;
-  public $street1;
-  public $street2;
-  public $city;
+  public $sleepingarrangements;
+  public $amenities;
+  public $houserules;
+  public $images;
+  public $price;
+  public $cleaningfee;
+  public $servicefee;
+  public $discount;
   public $state;
-  public $country;
-  public $stateCode;
-  public $countryCode;
-  public $registeredAT;
-  public $updatedAT;
+  public $city;
+  public $address;
+  public $latitude;
+  public $longitude;
+  public $createdAt;
+  public $updateAt;
 
   // Constructor with DB
   public function __construct($db)
@@ -34,8 +38,8 @@ class Business
     $this->conn = $db;
   }
 
-  // Get Posts
-  public function read()
+  // Get all places list
+  public function getPlaces()
   {
     // Create query
     $query = 'SELECT
@@ -68,8 +72,8 @@ class Business
     return $stmt;
   }
 
-  // Get Single Post
-  public function read_single()
+  // Get Single Place
+  public function getPlace()
   {
     // Create query
     $query = 'SELECT c.cat as category_name, 

@@ -2,7 +2,7 @@
   class Database {
     // DB Params
     private $host = 'localhost';
-    private $db_name = 'nearme';
+    private $db_name = 'phpbookingsystem';
     private $username = 'root';
     private $password = '';
     private $conn;

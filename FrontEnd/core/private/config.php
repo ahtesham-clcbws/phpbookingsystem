@@ -9,6 +9,7 @@ return [
         'phone' => '+91-2574125896',
         'copyright' => 'Copyright © 2018 - 2020. All Rights Reserved By Broadway Web Services',
         'logo' => '/assets/images/logo/logo.png',
+        'logotext' => 'Your Logo',
         'logoicon' => '/assets/images/logo/Logo-icon.png',
         'company' => 'Broadway Web Services',
         'address' => 'New Delhi',

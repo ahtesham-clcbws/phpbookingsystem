@@ -13,5 +13,5 @@ Use custom php MVC for whole project.
 * API (All php api's)
 * FrontEnd (frontend code and views)
 * DATABASE (Database file) available soon*
-* ADMIN (Admin Panel) available soon*
-* UserDashboard (for bookings and host properties) available soon*
+* ADMIN (Admin Panel) available soon* (PLEASE SUGGEST GOOD OPEN SOURCE ADMIN TEMPLATE)
+* UserDashboard (for bookings and host properties) available soon* (PLEASE SUGGEST GOOD OPEN SOURCE DASHBOARD TEMPLATE)
