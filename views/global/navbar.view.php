@@ -13,10 +13,10 @@
                         <ion-button href="#" size="small" color="dark">Host your home</ion-button>
                     </ion-button>
                     <ion-button>
-                        <ion-button href="#" size="small" color="dark">Log In</ion-button>
+                        <ion-button id="loginmodal" size="small" color="dark">Log In</ion-button>
                     </ion-button>
                     <ion-button>
-                        <ion-button id="showmodal" size="small" fill="outline" shape="round" class="ion-padding-horizontal">Sign Up</ion-button>
+                        <ion-button id="loginmodal2" fill="outline">Sign Up</ion-button>
                     </ion-button>
                 </ion-buttons>
             </ion-col>

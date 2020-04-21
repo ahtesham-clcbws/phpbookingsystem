@@ -1,0 +1,14 @@
+/* #footer {
+    background-color: var(--ion-color-light, #f4f5f8);
+} */
+
+/* #footer > ion-grid > ion-row > ion-col > ion-items > ion-item {
+    background: #f4f5f8 !important;
+} */
+/* #footer > ion-grid > ion-row > ion-col > ion-items {
+    background: #f4f5f8 !important;
+} */
+
+.underline {
+    text-decoration: underline;
+}
