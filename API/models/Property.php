@@ -1,151 +1,181 @@
 <?php
 class Property
 {
-  // DB stuff
-  private $conn;
-  private $table = 'place';
+	// DB stuff
+	private $conn;
+	private $table = 'place';
 
-  // Post Properties
-  public $id;
-  public $userID;
-  public $title;
-  public $placeType;
-  public $placeKind;
-  public $dedicatedSpace;
-  public $guests;
-  public $bedrooms;
-  public $bathrooms;
-  public $description;
-  public $sleepingarrangements;
-  public $amenities;
-  public $houserules;
-  public $images;
-  public $price;
-  public $cleaningfee;
-  public $servicefee;
-  public $discount;
-  public $state;
-  public $city;
-  public $address;
-  public $latitude;
-  public $longitude;
-  public $createdAt;
-  public $updateAt;
+	// Post Properties
+	public $id;
+	public $userID;
+	public $title;
+	public $placeType;
+	public $placeKind;
+	public $dedicatedSpace;
+	public $guests;
+	public $bedrooms;
+	public $bathrooms;
+	public $description;
+	public $sleepingarrangements;
+	public $amenities;
+	public $houserules;
+	public $images;
+	public $price;
+	public $cleaningfee;
+	public $servicefee;
+	public $discount;
+	public $state;
+	public $city;
+	public $address;
+	public $latitude;
+	public $longitude;
+	public $available;
+	public $placekind;
+	public $placekindslug;
+	public $property_type;
+	public $property_type_slug;
+	public $cityname;
+	public $statename;
+	public $hostname;
+	public $hostid;
+	public $hostimage;
+	public $hostidentity;
+	public $hostabout;
+	public $hostlanguage;
+	public $hostjoined;
+	public $createdAt;
+	public $updateAt;
 
-  // Constructor with DB
-  public function __construct($db)
-  {
-    $this->conn = $db;
-  }
 
-  // Get all places list
-  public function getPlaces()
-  {
-    // Create query
-    $query = 'SELECT
-                  c.name as category,
-                  c.slug as catslug,
-                  p.id, 
-                  p.userID, 
-                  p.verified,
-                  p.title, 
-                  p.slug, 
-                  p.description, 
-                  p.image,
-                  p.contactPhone, 
-                  p.contactEmail, 
-                  p.street1, 
-                  p.street2, 
-                  p.registeredAT, 
-                  p.updatedAT
+	// Constructor with DB
+	public function __construct($db)
+	{
+		$this->conn = $db;
+	}
+
+	// Get all places list
+	public function getPlaces()
+	{
+		// Create query
+		$query = 'SELECT
+                  pk.title as placekind,
+                  prt.title as property_type,
+                  -- pt.title as placetype,
+                  -- pt.slug as placetypeslug,
+                  -- pk.slug as placekindslug,
+                  -- st.name as statename,
+                  ct.name as cityname,
+                  p.id,
+                  p.title,
+                  p.guests,
+                  p.bedrooms, 
+                  p.bathrooms, 
+                  p.amenities, 
+                  p.images,
+                  p.price
                 FROM ' . $this->table . ' p
-                  LEFT JOIN
-                  business_cat c ON p.catID = c.id
+                  INNER JOIN
+                  place_kind pk ON p.placeKind = pk.id
+                  INNER JOIN
+                  property_type prt ON p.propertyType = prt.id
+                  INNER JOIN
+                  cities ct ON p.city = ct.id
+                  WHERE p.available = 1
                   ORDER BY p.id DESC';
 
-    // Prepare statement
-    $stmt = $this->conn->prepare($query);
+		// Prepare statement
+		$stmt = $this->conn->prepare($query);
 
-    // Execute query
-    $stmt->execute();
+		// Execute query
+		$stmt->execute();
 
-    return $stmt;
-  }
+		return $stmt;
+	}
 
-  // Get Single Place
-  public function getPlace()
-  {
-    // Create query
-    $query = 'SELECT c.cat as category_name, 
-                      c.cat as category_name,
-                      p.id, 
-                      p.status, 
-                      p.category_id,
-                      p.title, 
-                      p.slug, 
-                      p.description, 
-                      p.source,
-                      p.image,
-                      p.post_author, 
-                      p.created_at
+	// Get Single Place
+	public function getPlace()
+	{
+		// Create query
+		$query = 'SELECT hostjoined
+                      pk.title as placekind,
+                      pk.slug as placekindslug,
+                      prt.title as property_type,
+                      prt.slug as property_type_slug,
+                      ct.name as cityname,
+                      st.name as statename,
+                      h.id as hostid,
+                      h.firstName as hostname,
+                      h.image as hostimage,
+                      h.documentVerified as hostidentity,
+                      h.about as hostabout,
+                      h.languages as hostlanguage,
+                      h.createdAt as hostjoined,
+                      p.*
                     FROM ' . $this->table . ' p
-                    LEFT JOIN
-                      blog_cat c ON p.category_id = c.id
+					  INNER JOIN
+					  place_kind pk ON p.placeKind = pk.id
+					  INNER JOIN
+					  property_type prt ON p.propertyType = prt.id
+					  INNER JOIN
+					  cities ct ON p.city = ct.id
+					  INNER JOIN
+					  states st ON p.state = st.id
+					  INNER JOIN
+					  users h ON p.userID = h.id
                     WHERE
-                      p.slug = ?
+                      p.id = ?
                     LIMIT 0,1';
 
-    // Prepare statement
-    $stmt = $this->conn->prepare($query);
+		// Prepare statement
+		$stmt = $this->conn->prepare($query);
 
-    // Bind ID
-    $stmt->bindParam(1, $this->slug);
+		// Bind ID
+		$stmt->bindParam(1, $this->slug);
 
-    // Execute query
-    $stmt->execute();
+		// Execute query
+		$stmt->execute();
 
-    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+		$row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    // Set properties
-    $this->id = $row['id'];
-    $this->title = $row['title'];
-    $this->description = $row['description'];
-    $this->image = $row['image'];
-    $this->post_author = $row['post_author'];
-    $this->category_name = $row['category_name'];
-    $this->created_at = date('d M Y', strtotime($row['created_at']));
-  }
-
-  public function search($get)
-  {
-    // Create query
-    $query = 'SELECT
-                  c.name as category,
-                  c.slug as catslug,
-                  p.id, 
-                  p.userID, 
-                  p.verified,
-                  p.title, 
-                  p.slug, 
-                  p.description, 
-                  p.image,
-                  p.contactPhone, 
-                  p.contactEmail, 
-                  p.street1, 
-                  p.street2, 
-                  p.registeredAT, 
-                  p.updatedAT
-                FROM ' . $this->table . ' p
-                  LEFT JOIN
-                  business_cat c ON p.catID = c.id
-                  WHERE p.catID = '.$get["catid"].'';
-
-    // Prepare statement
-    $stmt = $this->conn->prepare($query);
-
-    // Execute query
-    $stmt->execute();
-
-    return $stmt;
-  }
+		// Set properties
+		$this->id = $row['id'];
+		$this->userID = $row['userID'];
+		$this->title = $row['title'];
+		// $this->placeType = $row['placeType'];
+		// $this->placeKind = $row['placeKind'];
+		$this->dedicatedSpace = $row['dedicatedSpace'];
+		$this->guests = $row['guests'];
+		$this->bedrooms = $row['bedrooms'];
+		$this->bathrooms = $row['bathrooms'];
+		$this->description = $row['description'];
+		$this->sleepingarrangements = $row['sleepingarrangements'];
+		$this->amenities = $row['amenities'];
+		$this->houserules = $row['houserules'];
+		$this->images = $row['images'];
+		$this->price = $row['price'];
+		$this->cleaningfee = $row['cleaningfee'];
+		$this->servicefee = $row['servicefee'];
+		$this->discount = $row['discount'];
+		// $this->state = $row['state'];
+		// $this->city = $row['city'];
+		$this->address = $row['address'];
+		$this->latitude = $row['latitude'];
+		$this->longitude = $row['longitude'];
+		$this->available = $row['available'];
+		$this->placekind = $row['placekind'];
+		$this->placekindslug = $row['placekindslug'];
+		$this->property_type = $row['property_type'];
+		$this->property_type_slug = $row['property_type_slug'];
+		$this->cityname = $row['cityname'];
+		$this->statename = $row['statename'];
+		$this->hostname = $row['hostname'];
+		$this->hostid = $row['hostid'];
+		$this->hostimage = $row['hostimage'];
+		$this->hostidentity = $row['hostidentity'];
+		$this->hostabout = $row['hostabout'];
+		$this->hostlanguage = $row['hostlanguage'];
+		$this->hostjoined = date('d M Y', strtotime($row['hostjoined']));
+		$this->createdAt = date('d M Y', strtotime($row['createdAt']));
+		// $this->updateAt = date('d M Y', strtotime($row['created_at']));
+	}
 }
