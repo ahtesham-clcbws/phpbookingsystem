@@ -57,8 +57,9 @@
     </ion-row>
     <ion-row class="ion-padding" id="popular-accomodations">
         <?php foreach ($data as $place) :
-            $a = json_decode($place->images);
-            $images = seperateData($a);
+            // $a = json_decode($place->images);
+            $images = seperateData($place->images);
+            $amenities = json_decode($place->amenities);
         ?>
 
             <ion-col size="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
@@ -87,13 +88,14 @@
                         </span>
                         <ion-text color="dark">
                             <a href="#">
-                                <h4><strong><?= $place->name; ?></strong></h4>
+                                <h4><strong><?= $place->title; ?></strong></h4>
                             </a>
                         </ion-text>
                     </ion-card-header>
                     <ion-card-content>
                         <p><?= $place->placekind; ?> <?= $place->property_type; ?> in <?= $place->cityname; ?></p>
-                        <p>Guests <?= $place->guests; ?>, Bedrooms <?= $place->bedrooms; ?>, Bathrooms <?= $place->bathrooms; ?>
+                        <p>Guests <?= $place->guests; ?>, Bedrooms <?= $place->bedrooms; ?>, Bathrooms <?= $place->bathrooms; ?></p>
+                        <p><?=$amenities->basic[0]->name;?></p>
                             <p class="ion-padding-top">Rs <ion-text color="primary"><?= $place->price; ?></ion-text> per night</p>
                     </ion-card-content>
                     <ion-footer>

@@ -3,7 +3,13 @@
 function getPlacesList()
 {
     $data = 'http://localhost:8080/api/properties/read.php';
-    return json_decode(file_get_contents($data));
+        $ch = curl_init($data);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    
+        $response = curl_exec($ch);
+        return json_decode($response);
 }
 
 function seperateData($data)

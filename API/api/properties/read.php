@@ -79,32 +79,33 @@ if (isset($_GET['id'])) {
 	// Check if any datas
 	if ($num > 0) {
 		// data array
-		$data_arr = array();
+		// $data_arr = array();
 		// $datas_arr['data'] = array();
 
-		while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-			extract($row);
+		// while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+		// 	extract($row);
 
-			$data_item = array(
-				'id' => $id,
-				'name' => $title,
-				'images' => json_encode($images),
-				'guests' => $guests,
-				'bedrooms' => $bedrooms,
-				'bathrooms' => $bathrooms,
-				'amenities' => json_encode($amenities),
-				'price' => $price,
-				'cityname' => $cityname,
-				'placekind' => $placekind,
-				'property_type' => $property_type,
-				'discount' => $discount
-			);
+			// $data_item = array(
+				// $array['id'] = $id;
+				// $array['name'] = $title;
+				// $array['images'] = $images;
+				// $array['guests'] = $guests;
+				// $array['bedrooms'] = $bedrooms;
+				// $array['bathrooms'] = $bathrooms;
+				// $array['amenities'] = $amenities;
+				// $array['price'] = $price;
+				// $array['cityname'] = $cityname;
+				// $array['placekind'] = $placekind;
+				// $array['property_type'] = $property_type;
+				// $array['discount'] = $discount;
+			// );
 			// Push to "data"
-			array_push($data_arr, $data_item);
+			// array_push($data_arr, $data_item);
 			// array_push($datas_arr['data'], $data_item); // If you need to get some other arrays to push in single query use thos array push with array names.
-		}
+		// }
+		$row = $result->fetchall(PDO::FETCH_ASSOC);
 		// Turn to JSON & output
-		echo json_encode($data_arr);
+		echo json_encode($row);
 	} else {
 		// No datas
 		echo json_encode(
