@@ -1,9 +1,14 @@
 <?php
 
-function businessList()
+function getPlacesList()
 {
-    $data = 'http://localhost:8080/api/business/read.php';
+    $data = 'http://localhost:8080/api/properties/read.php';
     return json_decode(file_get_contents($data));
+}
+
+function seperateData($data)
+{
+    return explode(",", $data);
 }
 
 function searchList($get)

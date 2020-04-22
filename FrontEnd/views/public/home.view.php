@@ -1,7 +1,7 @@
 <ion-grid class="ion-padding" id="searcharea">
     <form id="homesearch">
         <ion-card>
-        <ion-row>
+            <ion-row>
                 <ion-col>
                     <ion-item>
                         <ion-label position="floating">Floating Label</ion-label>
@@ -40,8 +40,8 @@
                     <ion-button color="primary" expand="block" size="large" class="ion-margin-top">Primary
                     </ion-button>
                 </ion-col>
-        </ion-row>
-    </ion-card>
+            </ion-row>
+        </ion-card>
     </form>
 </ion-grid>
 <ion-grid>
@@ -56,319 +56,65 @@
         </ion-col>
     </ion-row>
     <ion-row class="ion-padding" id="popular-accomodations">
-        <ion-col size="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
-            <ion-card>
-                <img src="https://ionicframework.com/docs/demos/api/card/madison.jpg">
-                <ion-card-header>
-                    <span>
-                        <ion-icon name="star" color="warning"></ion-icon>
-                    </span>
-                    <span>
-                        <ion-icon name="star" color="warning"></ion-icon>
-                    </span>
-                    <span>
-                        <ion-icon name="star" color="warning"></ion-icon>
-                    </span>
-                    <span>
-                        <ion-icon name="star" color="warning"></ion-icon>
-                    </span>
-                    <span>
-                        <ion-icon name="star"></ion-icon>
-                    </span>
+        <?php foreach ($data as $place) :
+            $a = json_decode($place->images);
+            $images = seperateData($a);
+        ?>
 
-                    <span class="ion-float-right">
-                        <ion-button fill="solid" color="danger">
-                            8.9
-                        </ion-button>                        
-                    </span>
-                    <ion-text color="dark">
-                        <a href="#">
-                            <h4><strong>Park Hyatt Hotel</strong></h4>
-                        </a>
-                    </ion-text>
-                </ion-card-header>
-                <ion-card-content>
-                    Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu.
-                    <p class="ion-padding-top">From <ion-text color="primary">$54</ion-text> per person</p>
-                </ion-card-content>
-                <ion-footer>
-                    <ion-toolbar class="ion-align-self-center">
+            <ion-col size="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
+                <ion-card>
+                    <img src="public/uploads/places/<?= $place->id; ?>/<?= $images[0]; ?>">
+                    <ion-card-header>
+                        <span>
+                            <ion-icon name="star" color="warning"></ion-icon>
+                        </span>
+                        <span>
+                            <ion-icon name="star" color="warning"></ion-icon>
+                        </span>
+                        <span>
+                            <ion-icon name="star" color="warning"></ion-icon>
+                        </span>
+                        <span>
+                            <ion-icon name="star" color="warning"></ion-icon>
+                        </span>
+                        <span>
+                            <ion-icon name="star"></ion-icon>
+                        </span>
+                        <span class="ion-float-right">
+                            <ion-button fill="solid" color="danger">
+                                8.9
+                            </ion-button>
+                        </span>
+                        <ion-text color="dark">
+                            <a href="#">
+                                <h4><strong><?= $place->name; ?></strong></h4>
+                            </a>
+                        </ion-text>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <p><?= $place->placekind; ?> <?= $place->property_type; ?> in <?= $place->cityname; ?></p>
+                        <p>Guests <?= $place->guests; ?>, Bedrooms <?= $place->bedrooms; ?>, Bathrooms <?= $place->bathrooms; ?>
+                            <p class="ion-padding-top">Rs <ion-text color="primary"><?= $place->price; ?></ion-text> per night</p>
+                    </ion-card-content>
+                    <ion-footer>
+                        <ion-toolbar class="ion-align-self-center">
 
-                        <ion-buttons slot="secondary">
-                            <ion-button>
-                                164 Views
-                            </ion-button>
-                        </ion-buttons>
-                        <ion-buttons slot="primary">
-                            <ion-button>
-                                350 Reviews
-                                
-                            </ion-button>
-                        </ion-buttons>
-                    </ion-toolbar>
-                </ion-footer>
-            </ion-card>
-        </ion-col>
-        <ion-col size="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
-            <ion-card>
-                <img src="https://ionicframework.com/docs/demos/api/card/madison.jpg">
-                <ion-card-header>
-                    <span>
-                        <ion-icon name="star" color="warning"></ion-icon>
-                    </span>
-                    <span>
-                        <ion-icon name="star" color="warning"></ion-icon>
-                    </span>
-                    <span>
-                        <ion-icon name="star" color="warning"></ion-icon>
-                    </span>
-                    <span>
-                        <ion-icon name="star" color="warning"></ion-icon>
-                    </span>
-                    <span>
-                        <ion-icon name="star"></ion-icon>
-                    </span>
-                    <span class="ion-float-right">
-                        <ion-button fill="solid" color="danger">
-                            8.9
-                        </ion-button>                        
-                    </span>
-                    <ion-text color="dark">
-                        <a href="#">
-                            <h4><strong>Park Hyatt Hotel</strong></h4>
-                        </a>
-                    </ion-text>
-                </ion-card-header>
-                <ion-card-content>
-                    Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu.
-                    <p class="ion-padding-top">From <ion-text color="primary">$54</ion-text> per person</p>
-                </ion-card-content>
-                <ion-footer>
-                    <ion-toolbar class="ion-align-self-center">
+                            <ion-buttons slot="secondary">
+                                <ion-button>
+                                    164 Views
+                                </ion-button>
+                            </ion-buttons>
+                            <ion-buttons slot="primary">
+                                <ion-button>
+                                    350 Reviews
+                                </ion-button>
+                            </ion-buttons>
+                        </ion-toolbar>
+                    </ion-footer>
+                </ion-card>
+            </ion-col>
+        <?php endforeach; ?>
 
-                        <ion-buttons slot="secondary">
-                            <ion-button>
-                                164 Views
-                            </ion-button>
-                        </ion-buttons>
-                        <ion-buttons slot="primary">
-                            <ion-button>
-                                350 Reviews
-                                
-                            </ion-button>
-                        </ion-buttons>
-                    </ion-toolbar>
-                </ion-footer>
-            </ion-card>
-        </ion-col>
-        <ion-col size="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
-            <ion-card>
-                <img src="https://ionicframework.com/docs/demos/api/card/madison.jpg">
-                <ion-card-header>
-                    <span>
-                        <ion-icon name="star" color="warning"></ion-icon>
-                    </span>
-                    <span>
-                        <ion-icon name="star" color="warning"></ion-icon>
-                    </span>
-                    <span>
-                        <ion-icon name="star" color="warning"></ion-icon>
-                    </span>
-                    <span>
-                        <ion-icon name="star" color="warning"></ion-icon>
-                    </span>
-                    <span>
-                        <ion-icon name="star"></ion-icon>
-                    </span>
-                    <span class="ion-float-right">
-                        <ion-button fill="solid" color="danger">
-                            8.9
-                        </ion-button>                        
-                    </span>
-                    <ion-text color="dark">
-                        <a href="#">
-                            <h4><strong>Park Hyatt Hotel</strong></h4>
-                        </a>
-                    </ion-text>
-                </ion-card-header>
-                <ion-card-content>
-                    Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu.
-                    <p class="ion-padding-top">From <ion-text color="primary">$54</ion-text> per person</p>
-                </ion-card-content>
-                <ion-footer>
-                    <ion-toolbar class="ion-align-self-center">
-
-                        <ion-buttons slot="secondary">
-                            <ion-button>
-                                164 Views
-                            </ion-button>
-                        </ion-buttons>
-                        <ion-buttons slot="primary">
-                            <ion-button>
-                                350 Reviews
-                                
-                            </ion-button>
-                        </ion-buttons>
-                    </ion-toolbar>
-                </ion-footer>
-            </ion-card>
-        </ion-col>
-        <ion-col size="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
-            <ion-card>
-                <img src="https://ionicframework.com/docs/demos/api/card/madison.jpg">
-                <ion-card-header>
-                    <span>
-                        <ion-icon name="star" color="warning"></ion-icon>
-                    </span>
-                    <span>
-                        <ion-icon name="star" color="warning"></ion-icon>
-                    </span>
-                    <span>
-                        <ion-icon name="star" color="warning"></ion-icon>
-                    </span>
-                    <span>
-                        <ion-icon name="star" color="warning"></ion-icon>
-                    </span>
-                    <span>
-                        <ion-icon name="star"></ion-icon>
-                    </span>
-                    <span class="ion-float-right">
-                        <ion-button fill="solid" color="danger">
-                            8.9
-                        </ion-button>                        
-                    </span>
-                    <ion-text color="dark">
-                        <a href="#">
-                            <h4><strong>Park Hyatt Hotel</strong></h4>
-                        </a>
-                    </ion-text>
-                </ion-card-header>
-                <ion-card-content>
-                    Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu.
-                    <p class="ion-padding-top">From <ion-text color="primary">$54</ion-text> per person</p>
-                </ion-card-content>
-                <ion-footer>
-                    <ion-toolbar class="ion-align-self-center">
-
-                        <ion-buttons slot="secondary">
-                            <ion-button>
-                                164 Views
-                            </ion-button>
-                        </ion-buttons>
-                        <ion-buttons slot="primary">
-                            <ion-button>
-                                350 Reviews
-                                
-                            </ion-button>
-                        </ion-buttons>
-                    </ion-toolbar>
-                </ion-footer>
-            </ion-card>
-        </ion-col>
-        <ion-col size="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
-            <ion-card>
-                <img src="https://ionicframework.com/docs/demos/api/card/madison.jpg">
-                <ion-card-header>
-                    <span>
-                        <ion-icon name="star" color="warning"></ion-icon>
-                    </span>
-                    <span>
-                        <ion-icon name="star" color="warning"></ion-icon>
-                    </span>
-                    <span>
-                        <ion-icon name="star" color="warning"></ion-icon>
-                    </span>
-                    <span>
-                        <ion-icon name="star" color="warning"></ion-icon>
-                    </span>
-                    <span>
-                        <ion-icon name="star"></ion-icon>
-                    </span>
-                    <span class="ion-float-right">
-                        <ion-button fill="solid" color="danger">
-                            8.9
-                        </ion-button>                        
-                    </span>
-                    <ion-text color="dark">
-                        <a href="#">
-                            <h4><strong>Park Hyatt Hotel</strong></h4>
-                        </a>
-                    </ion-text>
-                </ion-card-header>
-                <ion-card-content>
-                    Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu.
-                    <p class="ion-padding-top">From <ion-text color="primary">$54</ion-text> per person</p>
-                </ion-card-content>
-                <ion-footer>
-                    <ion-toolbar class="ion-align-self-center">
-
-                        <ion-buttons slot="secondary">
-                            <ion-button>
-                                164 Views
-                            </ion-button>
-                        </ion-buttons>
-                        <ion-buttons slot="primary">
-                            <ion-button>
-                                350 Reviews
-                                
-                            </ion-button>
-                        </ion-buttons>
-                    </ion-toolbar>
-                </ion-footer>
-            </ion-card>
-        </ion-col>
-        <ion-col size="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
-            <ion-card>
-                <img src="https://ionicframework.com/docs/demos/api/card/madison.jpg">
-                <ion-card-header>
-                    <span>
-                        <ion-icon name="star" color="warning"></ion-icon>
-                    </span>
-                    <span>
-                        <ion-icon name="star" color="warning"></ion-icon>
-                    </span>
-                    <span>
-                        <ion-icon name="star" color="warning"></ion-icon>
-                    </span>
-                    <span>
-                        <ion-icon name="star" color="warning"></ion-icon>
-                    </span>
-                    <span>
-                        <ion-icon name="star"></ion-icon>
-                    </span>
-                    <span class="ion-float-right">
-                        <ion-button fill="solid" color="danger">
-                            8.9
-                        </ion-button>                        
-                    </span>
-                    <ion-text color="dark">
-                        <a href="#">
-                            <h4><strong>Park Hyatt Hotel</strong></h4>
-                        </a>
-                    </ion-text>
-                </ion-card-header>
-                <ion-card-content>
-                    Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu.
-                    <p class="ion-padding-top">From <ion-text color="primary">$54</ion-text> per person</p>
-                </ion-card-content>
-                <ion-footer>
-                    <ion-toolbar class="ion-align-self-center">
-
-                        <ion-buttons slot="secondary">
-                            <ion-button>
-                                164 Views
-                            </ion-button>
-                        </ion-buttons>
-                        <ion-buttons slot="primary">
-                            <ion-button>
-                                350 Reviews
-                                
-                            </ion-button>
-                        </ion-buttons>
-                    </ion-toolbar>
-                </ion-footer>
-            </ion-card>
-        </ion-col>
     </ion-row>
     <ion-row class="ion-justify-content-center">
         <ion-button shape="round" color="primary" id="loadaccomodations">Load More</ion-button>

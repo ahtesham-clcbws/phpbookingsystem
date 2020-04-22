@@ -1,6 +1,6 @@
 <?php
 
-require '../headers.php';
+include_once '../../config/headers.php';
 
 include_once '../../config/Database.php';
 include_once '../../models/Property.php';
@@ -88,11 +88,11 @@ if (isset($_GET['id'])) {
 			$data_item = array(
 				'id' => $id,
 				'name' => $title,
-				'images' => $images,
+				'images' => json_encode($images),
 				'guests' => $guests,
 				'bedrooms' => $bedrooms,
 				'bathrooms' => $bathrooms,
-				'amenities' => $amenities,
+				'amenities' => json_encode($amenities),
 				'price' => $price,
 				'cityname' => $cityname,
 				'placekind' => $placekind,

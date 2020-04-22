@@ -78,7 +78,8 @@ class Property
                   INNER JOIN
                   cities ct ON p.city = ct.id
                   WHERE p.available = 1
-                  ORDER BY p.id DESC';
+				  ORDER BY p.id DESC
+				  LIMIT 6';
 
 		// Prepare statement
 		$stmt = $this->conn->prepare($query);
