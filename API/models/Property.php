@@ -60,10 +60,6 @@ class Property
 		$query = 'SELECT
                   pk.title as placekind,
                   prt.title as property_type,
-                  -- pt.title as placetype,
-                  -- pt.slug as placetypeslug,
-                  -- pk.slug as placekindslug,
-                  -- st.name as statename,
                   ct.name as cityname,
                   p.id,
                   p.title,
@@ -72,6 +68,7 @@ class Property
                   p.bathrooms, 
                   p.amenities, 
                   p.images,
+                  p.discount,
                   p.price
                 FROM ' . $this->table . ' p
                   INNER JOIN
@@ -96,7 +93,7 @@ class Property
 	public function getPlace()
 	{
 		// Create query
-		$query = 'SELECT hostjoined
+		$query = 'SELECT
                       pk.title as placekind,
                       pk.slug as placekindslug,
                       prt.title as property_type,
@@ -130,7 +127,7 @@ class Property
 		$stmt = $this->conn->prepare($query);
 
 		// Bind ID
-		$stmt->bindParam(1, $this->slug);
+		$stmt->bindParam(1, $this->id);
 
 		// Execute query
 		$stmt->execute();

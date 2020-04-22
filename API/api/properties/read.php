@@ -1,51 +1,117 @@
-<?php 
+<?php
 
-  require '../headers.php';
+require '../headers.php';
 
-  include_once '../../config/Database.php';
-  include_once '../../models/Business.php';
+include_once '../../config/Database.php';
+include_once '../../models/Property.php';
 
-  // Instantiate DB & connect
-  $database = new Database();
-  $db = $database->connect();
+// Instantiate DB & connect
+$database = new Database();
+$db = $database->connect();
 
-  // Instantiate blog post object
-  $data = new Business($db);
+// Instantiate Places data object
+$data = new Property($db);
 
-  // Blog post query
-  $result = $data->read();
-  // Get row count
-  $num = $result->rowCount();
+if (isset($_GET['id'])) {
 
-  // Check if any posts
-  if($num > 0) {
-    // Post array
-    $data_arr = array();
-    // $posts_arr['data'] = array();
+	// Get ID
+	$data->id = $_GET['id'];
 
-    while($row = $result->fetch(PDO::FETCH_ASSOC)) {
-      extract($row);
+	// Get data
+	$data->getPlace();
 
-      $data_item = array(
-        'id' => $id,
-        'slug' => $slug,
-        'name' => $title,
-        'image' => $image,
-        'category' => $category,      
-        'catslug' => $catslug,     
-        'street1' => $street1,     
-        'street2' => $street2,
-      );
-      // Push to "data"
-      array_push($data_arr, $data_item);
-      // array_push($posts_arr['data'], $post_item);
-    }
-    // Turn to JSON & output
-    echo json_encode($data_arr);
+	if($data->id){
+		// Create array
+		$data_arr = array(
+			'status' => '200',
+			'id' => $data->id,
+			'userID' => $data->userID,
+			'title' => $data->title,
+			'dedicatedSpace' => $data->dedicatedSpace,
+			'guests' => $data->guests,
+			'bedrooms' => $data->bedrooms,
+			'bathrooms' => $data->bathrooms,
+			'description' => $data->description,
+			'sleepingarrangements' => $data->sleepingarrangements,
+			'amenities' => $data->amenities,
+			'houserules' => $data->houserules,
+			'images' => $data->images,
+			'price' => $data->price,
+			'cleaningfee' => $data->cleaningfee,
+			'servicefee' => $data->servicefee,
+			'discount' => $data->discount,
+			'address' => $data->address,
+			'latitude' => $data->latitude,
+			'longitude' => $data->longitude,
+			'available' => $data->available,
+			'placekind' => $data->placekind,
+			'placekindslug' => $data->placekindslug,
+			'property_type' => $data->property_type,
+			'property_type_slug' => $data->property_type_slug,
+			'cityname' => $data->cityname,
+			'statename' => $data->statename,
+			'hostname' => $data->hostname,
+			'hostid' => $data->hostid,
+			'hostimage' => $data->hostimage,
+			'hostidentity' => $data->hostidentity,
+			'hostabout' => $data->hostabout,
+			'hostlanguage' => $data->hostlanguage,
+			'hostjoined' => $data->hostjoined,
+			'createdAt' => $data->createdAt
+		);
+	}else{
+		$data_arr = array(
+			'status' => '404',
+			'message' => 'No Place Found'
+		);
+	}
 
-  } else {
-    // No Posts
-    echo json_encode(
-      array('message' => 'No Business Found')
-    );
-  }
+	// Make JSON
+	print_r(json_encode($data_arr));
+
+} else {
+
+	// Places List data query
+	$result = $data->getPlaces();
+	// Get row count
+	
+	$num = $result->rowCount();
+	// Check if any datas
+	if ($num > 0) {
+		// data array
+		$data_arr = array();
+		// $datas_arr['data'] = array();
+
+		while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+			extract($row);
+
+			$data_item = array(
+				'id' => $id,
+				'name' => $title,
+				'images' => $images,
+				'guests' => $guests,
+				'bedrooms' => $bedrooms,
+				'bathrooms' => $bathrooms,
+				'amenities' => $amenities,
+				'price' => $price,
+				'cityname' => $cityname,
+				'placekind' => $placekind,
+				'property_type' => $property_type,
+				'discount' => $discount
+			);
+			// Push to "data"
+			array_push($data_arr, $data_item);
+			// array_push($datas_arr['data'], $data_item); // If you need to get some other arrays to push in single query use thos array push with array names.
+		}
+		// Turn to JSON & output
+		echo json_encode($data_arr);
+	} else {
+		// No datas
+		echo json_encode(
+			array(
+				'status' => '404',
+				'message' => 'No Places Found'
+				)
+		);
+	}
+}
