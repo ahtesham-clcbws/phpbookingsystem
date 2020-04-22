@@ -6,8 +6,6 @@ Ionic 5 installed locally in assets folder.
 
 Use custom php MVC for whole project.
 
-> SOME POINTS
-* All data queries need to work with PHP API.
 
 > Folders
 * API
