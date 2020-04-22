@@ -7,10 +7,6 @@ html.ios {
   body.backdrop-no-scroll {
     overflow: hidden;
   }
-  main {
-    max-width: 1300px;
-    margin: auto;
-  }
   html.ios
     ion-modal.modal-card
     .ion-page

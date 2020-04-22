@@ -13,9 +13,6 @@
 <body>
     <ion-app>
         <ion-content>
-
-        <?php
-        require 'topheader.view.php';
-        require 'navbar.view.php';
-        ?>
-        <main>
+            <?php require 'topheader.view.php'; ?>
+                <main>
+                    <?php require 'navbar.view.php'; ?>

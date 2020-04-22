@@ -1,3 +1,12 @@
+main {
+    max-width: 1300px;
+    margin: auto;
+}
+#topbar, #copyright {
+    max-width: 1300px;
+    margin: auto;
+}
+
 /* #footer {
     background-color: var(--ion-color-light, #f4f5f8);
 } */
