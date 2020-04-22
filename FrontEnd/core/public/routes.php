@@ -7,7 +7,7 @@ $router->get('signin', 'controllers/public/signin.php');
 $router->get('signup', 'controllers/public/signup.php');
 
 // MULTIPLE, PUBLIC & PRIVATE ROUTE CONTROLLERS
-    $router->get('stay', 'controllers/public/stay.php');
+    $router->get('place', 'controllers/public/place.php');
     $router->get('users', 'controllers/public/users.php');
     $router->get('experiences', 'controllers/public/experiences.php');
     $router->get('locations', 'controllers/public/locations.php');

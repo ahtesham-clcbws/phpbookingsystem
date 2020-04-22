@@ -12,6 +12,8 @@ class Request
             return 'business';
         } elseif ($result[0] == 'account') {
             return 'account';
+        }elseif ($result[0] == 'place') {
+            return 'place';
         } else {
             return trim(
                 parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH),

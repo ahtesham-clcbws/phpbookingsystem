@@ -91,7 +91,7 @@ class Property
 	}
 
 	// Get Single Place
-	public function getPlace()
+	public function getPlace($myid)
 	{
 		// Create query
 		$query = 'SELECT
@@ -121,20 +121,19 @@ class Property
 					  INNER JOIN
 					  users h ON p.userID = h.id
                     WHERE
-                      p.id = ?
+                      p.id = '.$myid.'
                     LIMIT 0,1';
 
 		// Prepare statement
 		$stmt = $this->conn->prepare($query);
-
-		// Bind ID
-		$stmt->bindParam(1, $this->id);
 
 		// Execute query
 		$stmt->execute();
 
 		$row = $stmt->fetch(PDO::FETCH_ASSOC);
 
+		return $row;
+		die();
 		// Set properties
 		$this->id = $row['id'];
 		$this->userID = $row['userID'];
@@ -175,5 +174,6 @@ class Property
 		$this->hostjoined = date('d M Y', strtotime($row['hostjoined']));
 		$this->createdAt = date('d M Y', strtotime($row['createdAt']));
 		// $this->updateAt = date('d M Y', strtotime($row['created_at']));
+		
 	}
 }

@@ -1,16 +1,37 @@
 <?php
 
-function getPlacesList()
+function getPlacesList($api)
 {
-    $data = 'http://localhost:8080/api/properties/read.php';
-        $ch = curl_init($data);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-        curl_setopt($ch, CURLOPT_HEADER, 0);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    
-        $response = curl_exec($ch);
-        return json_decode($response);
+    $data = $api . '/api/properties/read.php';
+    $ch = curl_init($data);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+    $response = curl_exec($ch);
+    return json_decode($response);
 }
+
+function getPlace($post, $api)
+{
+    $data =  $api . '/api/properties/readSingle.php';
+    $ch = curl_init($data);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+    $response = curl_exec($ch);
+    return $response;
+}
+
+function getURL()
+{
+    return explode('/', trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/'));
+}
+
+
 
 function seperateData($data)
 {
