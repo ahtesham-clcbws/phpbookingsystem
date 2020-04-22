@@ -10,8 +10,24 @@ Use custom php MVC for whole project.
 * All data queries need to work with PHP API.
 
 > Folders
-* API (All php api's)
+* API
+    * Models
+        * Places
+        * Admin
+        * Bookings
+        * Users / Hosts
+    * API
+        * Places API's
+        * Admin API's
+        * Bookings API's
+        * Users / Hosts API's
+        * Authentication API's
+            * Login API
+    * Config
+        * Database Connection
+        * Headers    
+
 * FrontEnd (frontend code and views)
-* DATABASE (Database file) available soon*
+* DATABASE (Database file)
 * ADMIN (Admin Panel) available soon* (PLEASE SUGGEST GOOD OPEN SOURCE ADMIN TEMPLATE)
 * UserDashboard (for bookings and host properties) available soon* (PLEASE SUGGEST GOOD OPEN SOURCE DASHBOARD TEMPLATE)
