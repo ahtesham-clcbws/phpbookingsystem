@@ -1,4 +1,4 @@
-<html lang="en" mode="ios">
+<html lang="en" mode="ios" ng-app="ionicApp">
 
 <head>
     <meta charset="UTF-8" />

@@ -6,18 +6,28 @@ main {
     max-width: 1300px;
     margin: auto;
 }
-
-/* #footer {
-    background-color: var(--ion-color-light, #f4f5f8);
-} */
-
-/* #footer > ion-grid > ion-row > ion-col > ion-items > ion-item {
-    background: #f4f5f8 !important;
-} */
-/* #footer > ion-grid > ion-row > ion-col > ion-items {
-    background: #f4f5f8 !important;
-} */
-
 .underline {
     text-decoration: underline;
 }
+
+
+.uk-modal-dialog ion-header {
+    display: initial;
+}
+#searcharea ion-card {
+    overflow: visible;
+}
+ion-slides {
+    height: 282px;
+  }
+
+  .swiper-slide {
+    display: block;
+  }
+
+ 
+  .swiper-slide img {
+    height: 100%;
+    width: auto;
+    pointer-events: none;
+  }

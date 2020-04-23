@@ -1,42 +1,29 @@
 <ion-grid class="ion-padding" id="searcharea">
     <form id="homesearch">
-        <ion-card>
+        <ion-card tab-index="1">
             <ion-row>
-                <ion-col>
+                <ion-col size="12" size-sm="6" size-md="3" size-lg="3" size-xl="3">
                     <ion-item>
-                        <ion-label position="floating">Floating Label</ion-label>
-                        <ion-input placeholder="Enter Input"></ion-input>
+                        <ion-label position="floating">Location</ion-label>
+                        <ion-input name="location"></ion-input>
                     </ion-item>
                 </ion-col>
-                <ion-col>
+                <ion-col size="12" size-sm="6" size-md="3" size-lg="3" size-xl="3">
                     <ion-item>
                         <ion-label position="floating">Floating Label</ion-label>
-                        <ion-input>
-                            <ion-datetime value="2019-10-01T15:43:40.394Z" display-timezone="utc">
-                            </ion-datetime>
-                        </ion-input>
+                        <ion-input type="text" class="datetimepicker" name="daterange"></ion-input>
                     </ion-item>
 
                 </ion-col>
-                <ion-col>
-
+                <ion-col size="12" size-sm="6" size-md="3" size-lg="3" size-xl="3">
                     <ion-item>
+
                         <ion-label position="floating">Floating Label</ion-label>
-                        <ion-select multiple="true" cancelText="Nah" okText="Okay!">
-                            <ion-select-option value="bacon">Bacon</ion-select-option>
-                            <ion-select-option value="olives">Black Olives</ion-select-option>
-                            <ion-select-option value="xcheese">Extra Cheese</ion-select-option>
-                            <ion-select-option value="peppers">Green Peppers</ion-select-option>
-                            <ion-select-option value="mushrooms">Mushrooms</ion-select-option>
-                            <ion-select-option value="onions">Onions</ion-select-option>
-                            <ion-select-option value="pepperoni">Pepperoni</ion-select-option>
-                            <ion-select-option value="pineapple">Pineapple</ion-select-option>
-                            <ion-select-option value="sausage">Sausage</ion-select-option>
-                            <ion-select-option value="Spinach">Spinach</ion-select-option>
-                        </ion-select>
+                        <ion-input name="select-guests"></ion-input>
+
                     </ion-item>
                 </ion-col>
-                <ion-col>
+                <ion-col size="12" size-sm="6" size-md="3" size-lg="3" size-xl="3">
                     <ion-button color="primary" expand="block" size="large" class="ion-margin-top">Primary
                     </ion-button>
                 </ion-col>
@@ -64,7 +51,13 @@
 
             <ion-col size="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
                 <ion-card>
-                    <img src="public/uploads/places/<?= $place->id; ?>/<?= $images[0]; ?>">
+                    <ion-slides>
+                        <?php foreach ($images as $slides) : ?>
+                            <ion-slide>
+                                <img src="public/uploads/places/<?= $place->id; ?>/<?= $slides; ?>">
+                            </ion-slide>
+                        <?php endforeach; ?>
+                    </ion-slides>
                     <ion-card-header>
                         <span>
                             <ion-icon name="star" color="warning"></ion-icon>
@@ -95,8 +88,8 @@
                     <ion-card-content>
                         <p><?= $place->placekind; ?> <?= $place->property_type; ?> in <?= $place->cityname; ?></p>
                         <p>Guests <?= $place->guests; ?>, Bedrooms <?= $place->bedrooms; ?>, Bathrooms <?= $place->bathrooms; ?></p>
-                        <p><?=$amenities->basic[0]->name;?></p>
-                            <p class="ion-padding-top">Rs <ion-text color="primary"><?= $place->price; ?></ion-text> per night</p>
+                        <p><?= $amenities->basic[0]->name; ?></p>
+                        <p class="ion-padding-top">Rs <ion-text color="primary"><?= $place->price; ?></ion-text> per night</p>
                     </ion-card-content>
                     <ion-footer>
                         <ion-toolbar class="ion-align-self-center">

@@ -251,13 +251,19 @@
 		</ion-content>
 	</ion-app>
 </body>
-<script type="module">
-	import { modalController } from '/assets/ionic/dist/ionic/index.esm.js';
-window.modalController = modalController;
-</script>
-<!-- <script src="/assets/js/location.js"></script> -->
+
+<script src="/assets/plugins/jquery-3.5.0.min.js"></script>
+<script type="text/javascript" src="/assets/plugins/es6.js"></script>
+
+<link rel="stylesheet" href="/assets/plugins/flatpickr/dist/themes/dark.css">
+<script src="/assets/plugins/flatpickr/dist/flatpickr.js"></script>
+
+<link rel="stylesheet" href="/assets/uikit/uikit.css" />
 <link rel="stylesheet" href="/assets/css/custom.css" />
+<link rel="stylesheet" href="/assets/css/custom.responsive.css" />
+
+<script src="/assets/uikit/uikit.js"></script>
+
 <script src="/assets/js/app.js"></script>
-<script src="/assets/js/loginmodal.js"></script>
 
 </html>
