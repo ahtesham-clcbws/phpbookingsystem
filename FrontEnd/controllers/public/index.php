@@ -1,5 +1,5 @@
 <?php
-$data = getPlacesList($api);
+$jobcardsdata = getPlacesList($api);
 
 require 'views/global/header.view.php';
 require 'views/public/home.view.php';

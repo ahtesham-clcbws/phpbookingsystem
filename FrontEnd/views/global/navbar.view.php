@@ -16,14 +16,14 @@
                         <ion-button size="small" color="dark">Log In</ion-button>
                     </ion-button>
                     <ion-button>
-                        <ion-button uk-toggle="target: #my-id" fill="outline">Sign Up</ion-button>
+                        <ion-button fill="outline">Sign Up</ion-button>
                     </ion-button>
                 </ion-buttons>
             </ion-col>
         </ion-row>
     </ion-grid>
 </ion-toolbar>
-<div id="my-id" uk-modal class="uk-flex-top sc-ion-modal-ios-h sc-ion-modal-ios-s ios uk-padding-remove">
+<!-- <div id="my-id" uk-modal class="uk-flex-top sc-ion-modal-ios-h sc-ion-modal-ios-s ios uk-padding-remove">
     <div class="uk-modal-dialog uk-modal-body uk-padding-remove uk-margin-auto-vertical">
         <ion-header translucent class="ion-no-padding">
             <ion-toolbar class="ion-padding">
@@ -74,4 +74,4 @@
             </ion-row>
         </ion-grid>
     </div>
-</div>
+</div> -->

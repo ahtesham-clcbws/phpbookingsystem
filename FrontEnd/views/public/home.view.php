@@ -4,33 +4,36 @@
             <ion-row>
                 <ion-col size="12" size-sm="6" size-md="3" size-lg="3" size-xl="3">
                     <ion-item>
-                        <ion-label position="floating">Location</ion-label>
-                        <ion-input name="location"></ion-input>
+                        <ion-label position="stacked">Location</ion-label>
+                        <ion-input name="location" placeholder="Add city, landmark, or address"></ion-input>
                     </ion-item>
                 </ion-col>
                 <ion-col size="12" size-sm="6" size-md="3" size-lg="3" size-xl="3">
                     <ion-item>
-                        <ion-label position="floating">Floating Label</ion-label>
-                        <ion-input type="text" class="datetimepicker" name="daterange"></ion-input>
+                        <ion-label position="stacked">Check in / Check out</ion-label>
+                        <ion-input type="text" class="datetimepicker" name="daterange" placeholder="Add Dates"></ion-input>
                     </ion-item>
 
                 </ion-col>
                 <ion-col size="12" size-sm="6" size-md="3" size-lg="3" size-xl="3">
                     <ion-item>
 
-                        <ion-label position="floating">Floating Label</ion-label>
-                        <ion-input name="select-guests"></ion-input>
+                        <ion-label position="stacked">Guests</ion-label>
+                        <ion-input name="select-guests" placeholder="Add Guests"></ion-input>
 
                     </ion-item>
                 </ion-col>
                 <ion-col size="12" size-sm="6" size-md="3" size-lg="3" size-xl="3">
-                    <ion-button color="primary" expand="block" size="large" class="ion-margin-top">Primary
+                    <ion-button color="primary" id="select-guests" expand="block" size="large" class="ion-margin-top">
+                        <ion-icon slot="start" name="search"></ion-icon>
+                        Search
                     </ion-button>
                 </ion-col>
             </ion-row>
         </ion-card>
     </form>
 </ion-grid>
+<ion-popover-controller></ion-popover-controller>
 <ion-grid>
     <ion-row>
         <ion-col>
@@ -43,7 +46,7 @@
         </ion-col>
     </ion-row>
     <ion-row class="ion-padding" id="popular-accomodations">
-        <?php foreach ($data as $place) :
+        <?php foreach ($jobcardsdata as $place) :
             // $a = json_decode($place->images);
             $images = seperateData($place->images);
             $amenities = json_decode($place->amenities);
@@ -54,7 +57,7 @@
                     <ion-slides>
                         <?php foreach ($images as $slides) : ?>
                             <ion-slide>
-                                <img src="public/uploads/places/<?= $place->id; ?>/<?= $slides; ?>">
+                                <ion-img class="imgcover" src="public/uploads/places/<?= $place->id; ?>/<?= $slides; ?>"></ion-img>
                             </ion-slide>
                         <?php endforeach; ?>
                     </ion-slides>
@@ -109,9 +112,9 @@
                 </ion-card>
             </ion-col>
         <?php endforeach; ?>
-
     </ion-row>
-    <ion-row class="ion-justify-content-center">
-        <ion-button shape="round" color="primary" id="loadaccomodations">Load More</ion-button>
+    <ion-row class="ion-justify-content-center ion-padding ion-margin-bottom">
+        <ion-button shape="round" color="primary" expand="block" id="loadaccomodations">Load More</ion-button>
     </ion-row>
 </ion-grid>
+<ion-popover-controller></ion-popover-controller>

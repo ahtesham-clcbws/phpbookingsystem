@@ -1,33 +1,30 @@
 main {
-    max-width: 1300px;
-    margin: auto;
+  max-width: 1300px;
+  margin: auto;
 }
-#topbar, #copyright {
-    max-width: 1300px;
-    margin: auto;
+#topbar,
+#copyright {
+  max-width: 1300px;
+  margin: auto;
 }
 .underline {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
-
-.uk-modal-dialog ion-header {
-    display: initial;
-}
+/* .uk-modal-dialog ion-header {
+  display: initial;
+} */
 #searcharea ion-card {
-    overflow: visible;
+  overflow: visible;
 }
 ion-slides {
-    height: 282px;
-  }
+  height: 282px;
+}
 
-  .swiper-slide {
-    display: block;
-  }
+.swiper-slide {
+  display: block;
+}
 
- 
-  .swiper-slide img {
-    height: 100%;
-    width: auto;
-    pointer-events: none;
-  }
+.imgcover {
+  object-fit: cover !important;
+}
