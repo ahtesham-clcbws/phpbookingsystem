@@ -1,30 +1,37 @@
-<ion-grid class="ion-padding" id="searcharea">
-    <form id="homesearch">
+<ion-grid class="ion-padding-horizontal ion-padding-bottom" id="searcharea">
+    <form id="homesearch" action="/search" name="homesearch">
         <ion-card tab-index="1">
             <ion-row>
                 <ion-col size="12" size-sm="6" size-md="3" size-lg="3" size-xl="3">
                     <ion-item>
-                        <ion-label position="stacked">Location</ion-label>
-                        <ion-input name="location" placeholder="Add city, landmark, or address"></ion-input>
+                        <ion-label position="stacked" for="location">Location</ion-label>
+                        <ion-input name="location" id="location" placeholder="Add city, landmark, or address"></ion-input>
                     </ion-item>
                 </ion-col>
                 <ion-col size="12" size-sm="6" size-md="3" size-lg="3" size-xl="3">
                     <ion-item>
-                        <ion-label position="stacked">Check in / Check out</ion-label>
-                        <ion-input type="text" class="datetimepicker" name="daterange" placeholder="Add Dates"></ion-input>
+                        <ion-label position="stacked" for="daterange">Check in / Check out</ion-label>
+                        <ion-input type="text" class="datetimepicker" name="daterange" id="daterange" placeholder="Add Dates"></ion-input>
                     </ion-item>
 
                 </ion-col>
                 <ion-col size="12" size-sm="6" size-md="3" size-lg="3" size-xl="3">
                     <ion-item>
 
-                        <ion-label position="stacked">Guests</ion-label>
-                        <ion-input name="select-guests" placeholder="Add Guests"></ion-input>
+                        <ion-label position="stacked" for="show-guests">Guests</ion-label>
+                        <ion-input name="show-guests" id="show-guests" type="text" placeholder="Add Guests" disabled></ion-input>
+
+                        <ion-input name="persons['adults']" type="number" min="1" max="16" hidden></ion-input>
+                        <ion-input name="persons['children']" type="number" min="0" max="5" hidden></ion-input>
+                        <ion-input name="persons['infants']" type="number" min="0" max="5" hidden></ion-input>
+                        <ion-input name="persons['guests']" type="number" min="1" max="21" hidden></ion-input>
+                        <ion-input name="persons['totalguests']" type="number" min="1" max="26" hidden></ion-input>
 
                     </ion-item>
                 </ion-col>
                 <ion-col size="12" size-sm="6" size-md="3" size-lg="3" size-xl="3">
-                    <ion-button color="primary" id="select-guests" expand="block" size="large" class="ion-margin-top">
+                    <ion-input name="search" type="submit" hidden></ion-input>
+                    <ion-button type="submit" color="primary" expand="block" size="large" class="ion-margin-top">
                         <ion-icon slot="start" name="search"></ion-icon>
                         Search
                     </ion-button>
@@ -117,4 +124,56 @@
         <ion-button shape="round" color="primary" expand="block" id="loadaccomodations">Load More</ion-button>
     </ion-row>
 </ion-grid>
-<ion-popover-controller></ion-popover-controller>
+<style>
+    .popover-content {
+            width: 260px !important;
+        }
+    input[name="show-guests"]:disabled{
+        opacity: 1 !important;
+    }
+    .value-button {
+        display: inline-block;
+        border: 0;
+        margin: 0px;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        vertical-align: middle;
+        padding: 8px 0;
+        background: #eee;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .value-button:hover {
+        cursor: pointer;
+    }
+
+    .popoverform .decreasevalue {
+        margin-right: -4px;
+    }
+
+    .popoverform .increasevalue {
+        margin-left: -4px;
+    }
+
+    input[name=guests],
+    input[name=children],
+    input[name=infants] {
+        text-align: center;
+        border: none;
+        margin: 0px;
+        width: 40px;
+        height: 40px;
+    }
+
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+</style>

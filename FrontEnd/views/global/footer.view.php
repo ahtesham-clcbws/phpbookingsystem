@@ -1,5 +1,5 @@
 				<ion-toolbar color="light">
-					<div id="footer" class="ion-padding">
+					<div id="footerAbove" class="ion-padding">
 						<ion-grid class="ion-padding">
 							<ion-row class="ion-padding">
 								<ion-col size="12">
@@ -251,16 +251,21 @@
 		</ion-content>
 	</ion-app>
 
-<script src="/assets/plugins/jquery-3.5.0.min.js"></script>
 
-<script src="/assets/plugins/flatpickr/dist/flatpickr.js"></script>
-<link rel="stylesheet" href="/assets/plugins/flatpickr/dist/flatpickr.css">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand" rel="stylesheet">
+<link rel="stylesheet" href="/assets/ionic/css/ionic.bundle.css" />
+<link rel="stylesheet" href="/assets/css/custom.css" />
+<link rel="stylesheet" href="/assets/css/custom.responsive.css" />
+<script src="/assets/plugins/flatpickr/dist/flatpickr.min.js"></script>
+<link rel="stylesheet" href="/assets/plugins/flatpickr/dist/flatpickr.min.css">
 
 <script src="/assets/js/app.js"></script>
 
 <script type="module">
-  import { popoverController } from '/assets/ionic/dist/ionic/index.esm.js';
-  window.popoverController = popoverController;
+	import { popoverController } from '/assets/ionic/dist/ionic/index.esm.js';
+	window.popoverController = popoverController;
+	import { loadingController } from '/assets/ionic/dist/ionic/index.esm.js';
+	window.loadingController = loadingController;
 </script>
 
 <?php if (isset($pagescripts)){
@@ -268,3 +273,4 @@
 }?>
 </body>
 </html>
+

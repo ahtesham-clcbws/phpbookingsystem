@@ -1,20 +1,35 @@
+<!DOCTYPE html>
 <html lang="en" mode="ios" ng-app="ionicApp">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script type="module" src="/assets/ionic/dist/ionic/ionic.esm.js"></script>
-    <script nomodule src="/assets/ionic/dist/ionic/ionic.js"></script>
+    <meta name=description content="<?=$app['config']['site']['description'];?>">
 
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/ionic/css/ionic.bundle.css" />
-    <!-- <link rel="stylesheet" href="/assets/uikit/uikit.css" /> -->
-    <link rel="stylesheet" href="/assets/css/custom.css" />
-    <link rel="stylesheet" href="/assets/css/custom.responsive.css" />
+    <script type="module">
+        import { loadingController } from '/assets/ionic/dist/ionic/index.esm.js';
+        window.loadingController = loadingController;
+    </script>
+    <script>
+        async function preloader() {
+        const loading = await loadingController.create({
+            message: 'Please wait...',
+            duration: 1000
+            });
+            await loading.present();
+        }
+    </script>
+    <meta name="theme-color" content="#fff"/>
+    
     <title>The Hill Stay</title>
 </head>
 
 <body>
+<!-- <body onload="preloader()"> -->
+
+<script type="module" src="/assets/ionic/dist/ionic/ionic.esm.js"></script>
+<script nomodule src="/assets/ionic/dist/ionic/ionic.js"></script>
+
     <ion-app>
         <ion-content>
             <?php require 'topheader.view.php'; ?>

@@ -1,24 +1,8 @@
-/* flatpickr v4.6.3, @license MIT */
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
     typeof define === 'function' && define.amd ? define(factory) :
     (global = global || self, global.flatpickr = factory());
 }(this, function () { 'use strict';
-
-    /*! *****************************************************************************
-    Copyright (c) Microsoft Corporation. All rights reserved.
-    Licensed under the Apache License, Version 2.0 (the "License"); you may not use
-    this file except in compliance with the License. You may obtain a copy of the
-    License at http://www.apache.org/licenses/LICENSE-2.0
-
-    THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-    KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
-    WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
-    MERCHANTABLITY OR NON-INFRINGEMENT.
-
-    See the Apache Version 2.0 License for specific language governing permissions
-    and limitations under the License.
-    ***************************************************************************** */
 
     var __assign = function() {
         __assign = Object.assign || function __assign(t) {
@@ -605,14 +589,7 @@
             self.showTimeInput =
                 self.selectedDates.length > 0 || self.config.noCalendar;
             var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-            /* TODO: investigate this further
-        
-              Currently, there is weird positioning behavior in safari causing pages
-              to scroll up. https://github.com/chmln/flatpickr/issues/563
-        
-              However, most browsers are not Safari and positioning is expensive when used
-              in scale. https://github.com/chmln/flatpickr/issues/1096
-            */
+
             if (!self.isMobile && isSafari) {
                 positionCalendar();
             }

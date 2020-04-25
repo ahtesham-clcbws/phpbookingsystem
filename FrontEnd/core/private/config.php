@@ -19,7 +19,7 @@ return [
         'ios' => 'https://store.apple.com/nearme',
     ],
     'private' => [
-        'apiurl' => 'http://192.168.31.162:8080'
+        'apiurl' => 'http://localhost:8080'
     ]
 ];
 

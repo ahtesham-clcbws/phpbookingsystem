@@ -1,4 +1,4 @@
-<ion-toolbar class="ion-padding ion-margin-horizontal">
+<ion-toolbar class="ion-padding-vertical ion-padding-top ion-margin-horizontal">
     <ion-grid>
         <ion-row class="ion-justify-content-between">
 

@@ -28,3 +28,7 @@ ion-slides {
 .imgcover {
   object-fit: cover !important;
 }
+a:hover {
+  color: #0f6ecd;
+  text-decoration: underline;
+}
