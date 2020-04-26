@@ -30,4 +30,4 @@ Use custom php MVC for whole project.
 * UserDashboard (for bookings and host properties) (now its part of FrontEnd)*
 * ADMIN (Admin Panel) available soon*
 
->> FOR UPDATES SEE UPDATES.md
+>> FOR UPDATES SEE [UPDATES.md](./UPDATES.md)
