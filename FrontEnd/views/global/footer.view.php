@@ -251,10 +251,11 @@
 		</ion-content>
 	</ion-app>
 
+<link href="https://fonts.googleapis.com/css2?family=Quicksand" rel="stylesheet">
+<link rel="stylesheet" href="/assets/ionic/css/ionic.bundle.min.css" />
+<script nomodule src="/assets/ionic/dist/ionic/ionic.js"></script>
 <link rel="stylesheet" href="/assets/css/custom.css" />
 <link rel="stylesheet" href="/assets/css/custom.responsive.css" />
-<script src="/assets/plugins/flatpickr/dist/flatpickr.min.js"></script>
-<link rel="stylesheet" href="/assets/plugins/flatpickr/dist/flatpickr.min.css">
 
 <script src="/assets/js/app.js"></script>
 

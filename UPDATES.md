@@ -8,3 +8,9 @@
 * Form validation will be done lastly.
 * Fist step complete.
 * Second in progress.
+
+* Removed Plugins (es6, jquery, momentjs).
+* Removed unused code from css (ionic.bundle.css).
+* Minify CSS & JS (ionic.bundle.min.css, ionic.js, swiper.js, swiper.bundle.js)
+* Removed global style & script or flatpickr calender
+* Include flatpickr only with home for now.

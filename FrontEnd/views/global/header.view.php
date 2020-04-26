@@ -23,10 +23,7 @@
     </script>
 
 <script type="module" src="/assets/ionic/dist/ionic/ionic.esm.js"></script>
-<script nomodule src="/assets/ionic/dist/ionic/ionic.js"></script>
 
-<link href="https://fonts.googleapis.com/css2?family=Quicksand" rel="stylesheet">
-<link rel="stylesheet" href="/assets/ionic/css/ionic.bundle.css" />
 
 </head>
 

@@ -1,9 +1,7 @@
 html.ios {
     --ion-default-font: 'Quicksand', -apple-system, BlinkMacSystemFont, Helvetica Neue, sans-serif;;
   }
-  html.md {
-    --ion-default-font: 'Quicksand', "Helvetica Neue", sans-serif;
-  }
+
   body.backdrop-no-scroll {
     overflow: hidden;
   }
@@ -215,10 +213,6 @@ html.ios {
   }
   [dir="rtl"].ios .menu-content-reveal {
     box-shadow: 8px 0 42px rgba(0, 0, 0, 0.08);
-  }
-  .md .menu-content-push,
-  .md .menu-content-reveal {
-    box-shadow: 4px 0 16px rgba(0, 0, 0, 0.18);
   }
   audio,
   canvas,
@@ -781,69 +775,6 @@ html.ios {
   }
   @media (max-width: 576px) {
     .ion-hide-sm-down {
-      display: none !important;
-    }
-  }
-  @media (min-width: 768px) {
-    .ion-float-md-left {
-      float: left !important;
-    }
-    .ion-float-md-right {
-      float: right !important;
-    }
-    .ion-float-md-start {
-      float: left !important;
-    }
-    :host-context([dir="rtl"]) .ion-float-md-start,
-    [dir="rtl"] .ion-float-md-start {
-      float: right !important;
-    }
-    .ion-float-md-end {
-      float: right !important;
-    }
-    :host-context([dir="rtl"]) .ion-float-md-end,
-    [dir="rtl"] .ion-float-md-end {
-      float: left !important;
-    }
-    .ion-text-md-center {
-      text-align: center !important;
-    }
-    .ion-text-md-justify {
-      text-align: justify !important;
-    }
-    .ion-text-md-start {
-      text-align: start !important;
-    }
-    .ion-text-md-end {
-      text-align: end !important;
-    }
-    .ion-text-md-left {
-      text-align: left !important;
-    }
-    .ion-text-md-right {
-      text-align: right !important;
-    }
-    .ion-text-md-nowrap {
-      white-space: nowrap !important;
-    }
-    .ion-text-md-wrap {
-      white-space: normal !important;
-    }
-    .ion-text-md-uppercase {
-      text-transform: uppercase !important;
-    }
-    .ion-text-md-lowercase {
-      text-transform: lowercase !important;
-    }
-    .ion-text-md-capitalize {
-      text-transform: capitalize !important;
-    }
-    .ion-hide-md-up {
-      display: none !important;
-    }
-  }
-  @media (max-width: 768px) {
-    .ion-hide-md-down {
       display: none !important;
     }
   }
