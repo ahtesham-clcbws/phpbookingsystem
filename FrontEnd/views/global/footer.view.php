@@ -251,9 +251,6 @@
 		</ion-content>
 	</ion-app>
 
-
-<link href="https://fonts.googleapis.com/css2?family=Quicksand" rel="stylesheet">
-<link rel="stylesheet" href="/assets/ionic/css/ionic.bundle.css" />
 <link rel="stylesheet" href="/assets/css/custom.css" />
 <link rel="stylesheet" href="/assets/css/custom.responsive.css" />
 <script src="/assets/plugins/flatpickr/dist/flatpickr.min.js"></script>
@@ -264,13 +261,16 @@
 <script type="module">
 	import { popoverController } from '/assets/ionic/dist/ionic/index.esm.js';
 	window.popoverController = popoverController;
-	import { loadingController } from '/assets/ionic/dist/ionic/index.esm.js';
-	window.loadingController = loadingController;
 </script>
 
-<?php if (isset($pagescripts)){
+<?php
+if (isset($pagestyles)){
+	echo $pagestyles;
+}
+if (isset($pagescripts)){
 	echo $pagescripts;
-}?>
+}
+?>
 </body>
 </html>
 

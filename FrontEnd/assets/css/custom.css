@@ -17,17 +17,6 @@ main {
 #searcharea ion-card {
   overflow: visible;
 }
-ion-slides {
-  height: 282px;
-}
-
-.swiper-slide {
-  display: block;
-}
-
-.imgcover {
-  object-fit: cover !important;
-}
 a:hover {
   color: #0f6ecd;
   text-decoration: underline;

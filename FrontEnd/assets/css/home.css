@@ -1,0 +1,63 @@
+
+    .popover-content {
+        width: 260px !important;
+    }
+input[name="show-guests"]:disabled{
+    opacity: 1 !important;
+}
+.value-button {
+    display: inline-block;
+    border: 0;
+    margin: 0px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 8px 0;
+    background: #eee;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.value-button:hover {
+    cursor: pointer;
+}
+
+.popoverform .decreasevalue {
+    margin-right: -4px;
+}
+
+.popoverform .increasevalue {
+    margin-left: -4px;
+}
+
+input[name=guests],
+input[name=children],
+input[name=infants] {
+    text-align: center;
+    border: none;
+    margin: 0px;
+    width: 40px;
+    height: 40px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+ion-slides {
+    height: 282px;
+  }
+
+  .swiper-slide {
+    display: block;
+  }
+  
+  .imgcover {
+    object-fit: cover !important;
+  }  

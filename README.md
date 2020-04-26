@@ -29,3 +29,5 @@ Use custom php MVC for whole project.
 * DATABASE (Database file) *updated in every 48hours to 72hours
 * UserDashboard (for bookings and host properties) (now its part of FrontEnd)*
 * ADMIN (Admin Panel) available soon*
+
+>> FOR UPDATES SEE UPDATES.md
