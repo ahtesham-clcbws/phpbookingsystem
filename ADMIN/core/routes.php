@@ -5,7 +5,14 @@ $router->get('login', 'controllers/public/Login.php');
 // $router->get('resetaccount', 'controllers/public/PasswordReset.php');
 
 // SINGLE ROUTE AFTER LOGIN CONTROLLERS
-$router->get('', 'controllers/private/dashboard.php');
+$router->get('', 'controllers/private/Dashboard.php');
+$router->get('places', 'controllers/private/Places.php');
+$router->get('bookings', 'controllers/private/Bookings.php');
+$router->get('reviews', 'controllers/private/Reviews.php');
+$router->get('users', 'controllers/private/Users.php');
+$router->get('hosts', 'controllers/private/Hosts.php');
+$router->get('subadmins', 'controllers/private/Subadmins.php');
+$router->get('locations', 'controllers/private/Locations.php');
 
 // MULTIPLE ROUTE CONTROLLERS
 

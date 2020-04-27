@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
-	<title>Roxa - Bootstrap 4 Admin Dashboard Template</title>
+	<title><?=$sitetitle;?></title>
 	<!-- Favicon-->
 	<link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon">
 
@@ -22,7 +22,7 @@
 			<div class="wrap-login100">
 				<form class="login100-form validate-form">
 					<span class="login100-form-logo">
-						<img alt="" src="../../assets/images/loading.png">
+						<img alt="" src="<?=$logologin;?>">
 					</span>
 					<span class="login100-form-title p-b-34 p-t-27">
 						Log in

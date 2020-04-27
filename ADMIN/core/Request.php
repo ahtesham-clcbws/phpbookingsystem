@@ -8,12 +8,20 @@ class Request
         //     parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/'
         // );
         $result = explode('/', trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/'));
-        if ($result[0] == 'business') {
-            return 'business';
-        } elseif ($result[0] == 'account') {
-            return 'account';
-        }elseif ($result[0] == 'place') {
-            return 'place';
+        if ($result[0] == 'places') {
+            return 'places';
+        } elseif ($result[0] == 'bookings') {
+            return 'bookings';
+        } elseif ($result[0] == 'reviews') {
+            return 'reviews';
+        } elseif ($result[0] == 'users') {
+            return 'users';
+        } elseif ($result[0] == 'hosts') {
+            return 'hosts';
+        } elseif ($result[0] == 'subadmins') {
+            return 'subadmins';
+        } elseif ($result[0] == 'locations') {
+            return 'locations';
         } else {
             return trim(
                 parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH),

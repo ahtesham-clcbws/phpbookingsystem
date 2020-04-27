@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
-	<title>Lorax - Bootstrap 4 Admin Dashboard Template</title>
+	<title><?=$sitetitle;?></title>
 	<!-- Favicon-->
 	<link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon">
 	<!-- Plugins Core Css -->

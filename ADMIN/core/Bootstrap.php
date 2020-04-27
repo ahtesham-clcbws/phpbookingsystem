@@ -6,6 +6,11 @@ $app = [];
 $app['config'] = require 'config.php';
 $sitedetails = $app['config']['site'];
 $api = $app['config']['private']['apiurl'];
+$logo = $sitedetails['logosidebar'];
+$logologin = $sitedetails['logologin'];
+$logotext = $sitedetails['logotext'];
+$sitetitle = $sitedetails['title'];
+$pagetitle = 'Dashboard';
 
 require 'Router.php';
 require 'Request.php';
