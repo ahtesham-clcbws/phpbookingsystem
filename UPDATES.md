@@ -18,5 +18,5 @@
 * Removed global style & script or flatpickr calender
 * Include flatpickr only with home for now.
 
-* Include [.htaccess](./.htaccess) for code optimizations.
-* Include one php [Optimizer.php](./FrontEnd.core/private/Optimizer.php) file in core for whitespace optimization
+* Include [.htaccess](./FrontEnd/.htaccess) for code optimizations.
+* Include one php [Optimizer.php](./FrontEnd/core/private/Optimizer.php) file in core for whitespace optimization
