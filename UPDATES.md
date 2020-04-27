@@ -14,3 +14,6 @@
 * Minify CSS & JS (ionic.bundle.min.css, ionic.js, swiper.js, swiper.bundle.js)
 * Removed global style & script or flatpickr calender
 * Include flatpickr only with home for now.
+
+* Include [.htaccess](./.htaccess) for code optimizations.
+* Include one php [Optimizer.php](./FrontEnd.core/private/Optimizer.php) file in core for whitespace optimization
