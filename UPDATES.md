@@ -1,5 +1,8 @@
 # UPDATES
 
+> April 28 2020:-
+* Admin Panel Added
+
 > April 27 2020:-
 * Hosting place form added at (/account/hostplace)
     * Start php server in FrontEnd and see it in action (localhost/account/hostplace)
