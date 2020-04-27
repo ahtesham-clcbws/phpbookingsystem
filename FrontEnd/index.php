@@ -1,5 +1,5 @@
 <?php
-require 'core/private/Optmizer.php';
+require 'core/private/Optimizer.php';
 
 $database = require 'core/private/Bootstrap.php';
 
