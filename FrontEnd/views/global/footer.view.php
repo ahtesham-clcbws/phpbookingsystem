@@ -257,7 +257,6 @@
 <link rel="stylesheet" href="/assets/css/custom.css" />
 <link rel="stylesheet" href="/assets/css/custom.responsive.css" />
 
-<script src="/assets/js/app.js"></script>
 
 <script type="module">
 	import { popoverController } from '/assets/ionic/dist/ionic/index.esm.js';
@@ -272,6 +271,7 @@ if (isset($pagescripts)){
 	echo $pagescripts;
 }
 ?>
+<script src="/assets/js/app.js"></script>
 </body>
 </html>
 

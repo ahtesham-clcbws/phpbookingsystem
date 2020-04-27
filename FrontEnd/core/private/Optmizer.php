@@ -20,9 +20,7 @@ function sanitize_output($buffer) {
     return $buffer;
 }
 
-if (substr_count($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip'))
-ob_start("ob_gzhandler");
-else ob_start("sanitize_output");
+ob_start("sanitize_output");
 
 // //NO CACHE HEADERS
 // $ts = gmdate("D, d M Y H:i:s") . " GMT";
