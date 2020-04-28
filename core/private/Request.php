@@ -14,6 +14,8 @@ class Request
             return 'account';
         }elseif ($result[0] == 'place') {
             return 'place';
+        }elseif ($result[0] == 'hosting') {
+            return 'hosting';
         } else {
             return trim(
                 parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH),

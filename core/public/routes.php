@@ -13,7 +13,7 @@ $router->get('logout', 'controllers/public/logout.php');
     $router->get('experiences', 'controllers/public/experiences.php');
     $router->get('locations', 'controllers/public/locations.php');
 
-    $router->get('host', 'controllers/private/host.php');
+    $router->get('hosting', 'controllers/private/host.php');
     $router->get('account', 'controllers/private/account.php');
 
 // PUBLIC POST ONLY ROUTE CONTROLLERS

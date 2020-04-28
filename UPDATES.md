@@ -1,6 +1,15 @@
 # UPDATES
 
+> April 29 2020:-
+* Hosting dashboard path change to (/hosting)
+* Added calendar (fullcalendar.io) at (/hosting/calendar)
+* Seperate hosting and main styles. scripts, header, footer and Menu.
+
 > April 28 2020:-
+* Hosting Dashboard Added
+* Hosting dashboard access (/account/hosting)
+* Convert flatpickr calender from jQuery to VanillaJS.
+
 * FrontEnd user login modal.
 * FrontEnd user login process done with API.
 * FrontEnd navbar buttons turns conditional.
@@ -11,9 +20,6 @@
     * Some scripts and style loaded only for logged-in users.
     * Some scripts and style only loaded for if user is a host.
 
-* Hosting Dashboard Added
-* Hosting dashboard acces (/account/hosting)
-* Convert flatpickr calender from jQuery to VanillaJS.
 
 * > IN PROGRESS
     * Hosting Dashboard
