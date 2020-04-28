@@ -1,6 +1,6 @@
 # Core PHP booking System (Frontend Only)
 
-I used ionic with this build, with ionic core javascript code.
+I used Ionic, PHP & VanillaJS.
 
 Ionic 5 installed locally in assets folder.
 
