@@ -15,7 +15,7 @@
 
 > April 27 2020:-
 * Hosting place form added at (/account/hostplace)
-    * Start php server in FrontEnd and see it in action (localhost/account/hostplace)
+    * Start php server and see it in action (localhost/account/hostplace)
 * Minimum 20 steps needed on Hosting form.
 * Every step need to validate before going to next step.
 * Form validation will be done lastly.
@@ -28,5 +28,5 @@
 * Removed global style & script or flatpickr calender
 * Include flatpickr only with home for now.
 
-* Include [.htaccess](./FrontEnd/.htaccess) for code optimizations.
-* Include one php [Optimizer.php](./FrontEnd/core/private/Optimizer.php) file in core for whitespace optimization
+* Include [.htaccess](./.htaccess) for code optimizations.
+* Include one php [Optimizer.php](./core/private/Optimizer.php) file in core for whitespace optimization
