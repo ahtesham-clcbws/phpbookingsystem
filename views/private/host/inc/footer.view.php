@@ -1,6 +1,4 @@
-<?php require './views/global/footer.sec.menu.view.php'; ?>
 <?php require './views/global/footer.menu.view.php'; ?>
-
 
 </main>
 
@@ -26,15 +24,9 @@ if (isset($pagestyles)) {
 if (isset($pagescripts)) {
 	echo $pagescripts;
 }
-if (!isset($_SESSION['login'])) {
-	echo '<script src="/assets/js/login.js"></script>';
-}
-if (isset($_SESSION['login'])) {
-	echo '<link rel="stylesheet" href="/assets/css/accountpopup.css">';
-	echo '<script src="/assets/js/accountpopup.js"></script>';
-}
 ?>
-<script src="/assets/js/app.js"></script>
+<link rel="stylesheet" href="/assets/css/hosting.css">
+<script src="/assets/js/hosting.js"></script>
 
 </ion-app>
 </body>

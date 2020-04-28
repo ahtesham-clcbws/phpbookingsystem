@@ -1,17 +1,29 @@
 # UPDATES
 
 > April 28 2020:-
-* Admin Panel Added
-
 * FrontEnd user login modal.
 * FrontEnd user login process done with API.
 * FrontEnd navbar buttons turns conditional.
 * FrontEnd login modal and functions only loaded in backend if not logged in.
 * FrontEnd screenshot updated.
-* FrontEnd some script and style partitioned into 2:-
+* FrontEnd script and styles loads conditionaly:-
     * Some scripts and style loaded only for non-logged-in users.
     * Some scripts and style loaded only for logged-in users.
-    * Some scripts and style only loaded for if user is a host. 
+    * Some scripts and style only loaded for if user is a host.
+
+* Hosting Dashboard Added
+* Hosting dashboard acces (/account/hosting)
+* Convert flatpickr calender from jQuery to VanillaJS.
+
+* > IN PROGRESS
+    * Hosting Dashboard
+    * Host profile setup
+    * Host add place form
+    * Host Reservations
+    * Host Calendar
+    * Host Listings
+    * Host Statistics
+
 
 > April 27 2020:-
 * Hosting place form added at (/account/hostplace)
@@ -25,7 +37,7 @@
 * Removed Plugins (es6, jquery, momentjs).
 * Removed unused code from css (ionic.bundle.css).
 * Minify CSS & JS (ionic.bundle.min.css, ionic.js, swiper.js, swiper.bundle.js)
-* Removed global style & script or flatpickr calender
+* Removed global style & script of flatpickr calender
 * Include flatpickr only with home for now.
 
 * Include [.htaccess](./.htaccess) for code optimizations.

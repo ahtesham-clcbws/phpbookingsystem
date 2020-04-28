@@ -1,7 +1,7 @@
 
-    .popover-content {
-        width: 260px !important;
-    }
+/* .popover-content {
+    width: 260px !important;
+} */
 input[name="show-guests"]:disabled{
     opacity: 1 !important;
 }

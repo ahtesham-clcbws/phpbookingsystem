@@ -12,17 +12,26 @@
                     <ion-button>
                         <ion-button href="#" size="small" color="dark">Host your home</ion-button>
                     </ion-button>
-                    <?php if(isset($_SESSION['login']) == '1') { ?>
-                    <ion-button>
-                        <ion-button id="accountpopup" fill="outline"><?=$_SESSION['firstName'];?></ion-button>
-                    </ion-button>
+                    <?php if (isset($_SESSION['login']) == '1') { ?>
+                        <ion-button>
+                            <ion-button href="/account/hosting" size="small" color="dark">Switch to hosting</ion-button>
+                        </ion-button>
+
+                        <ion-chip id="accountpopup" outline="true">
+                            <ion-label><?= $_SESSION['firstName']; ?></ion-label>
+                            <ion-avatar>
+                                <img src="https://a0.muscache.com/defaults/user_pic-50x50.png?v=3">
+                            </ion-avatar>
+                            <ion-badge>9</ion-badge>
+                        </ion-chip>
+
                     <?php } else { ?>
-                    <ion-button>
-                        <ion-button id="loginwindow" size="small" color="dark">Log In</ion-button>
-                    </ion-button>
-                    <ion-button>
-                        <ion-button id="registerwindow" fill="outline">Sign Up</ion-button>
-                    </ion-button>
+                        <ion-button>
+                            <ion-button id="loginwindow" size="small" color="dark">Log In</ion-button>
+                        </ion-button>
+                        <ion-button>
+                            <ion-button id="registerwindow" fill="outline">Sign Up</ion-button>
+                        </ion-button>
                     <?php } ?>
                 </ion-buttons>
             </ion-col>

@@ -13,22 +13,6 @@
     <script type="module" src="/assets/ionic/dist/ionic/ionic.esm.js"></script>
     <script nomodule src="/assets/ionic/dist/ionic/ionic.js"></script>
 
-    <script type="module">
-        import { loadingController } from '/assets/ionic/dist/ionic/index.esm.js';
-        window.loadingController = loadingController;
-    </script>
-    <script>
-        async function preloader() {
-        const loading = await loadingController.create({
-            message: 'Please wait...',
-            duration: 1000
-            });
-            await loading.present();
-        }
-    </script>
-
-
-
 </head>
 
 <body>
@@ -36,6 +20,5 @@
 
     <ion-app>
         <ion-content>
-            <?php require 'topheader.view.php'; ?>
+                <?php require 'topbar.view.php'; ?>
             <main>
-                <?php require 'navbar.view.php'; ?>

@@ -1,0 +1,10 @@
+.is-active {
+  border-bottom: #3880ff 2px solid;
+}
+#hostingheader ion-toolbar {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#hostingalerts ion-card-subtitle {
+  margin-top: 3px;
+}

@@ -2,6 +2,12 @@ let adults;
 let children;
 let infants;
 
+// calendar js
+document.getElementsByName("daterange").flatpickr({
+	mode: "range",
+	minDate: "today"
+});
+
 // Guest Select popup STARTS
 let currentPopover2 = null;
 
@@ -30,7 +36,6 @@ customElements.define('popover-example-page', class ModalContent extends HTMLEle
 	connectedCallback() {
 		this.innerHTML = `
           <ion-item-group>
-
             <ion-item class="popoverform">
               <ion-label class="ion-padding-vertical">
                 <ion-text>
@@ -74,7 +79,8 @@ customElements.define('popover-example-page', class ModalContent extends HTMLEle
             </ion-item>
 
             <ion-item lines="none" detail="false" button onClick="dismissPopover()">Done</ion-item>
-          </ion-list>
+		  </ion-list>
+		  <style>.popover-content{width: 260px !important;}</style>
         `;
 	}
 });

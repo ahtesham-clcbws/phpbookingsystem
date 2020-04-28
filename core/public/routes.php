@@ -5,6 +5,7 @@ $router->get('search', 'controllers/public/search.php');
 $router->get('become-host', 'controllers/public/becomehost.php');
 $router->get('signin', 'controllers/public/signin.php');
 $router->get('signup', 'controllers/public/signup.php');
+$router->get('logout', 'controllers/public/logout.php');
 
 // MULTIPLE, PUBLIC & PRIVATE ROUTE CONTROLLERS
     $router->get('place', 'controllers/public/place.php');

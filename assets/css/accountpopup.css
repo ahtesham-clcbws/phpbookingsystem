@@ -1,0 +1,8 @@
+ion-chip#accountpopup {
+    overflow: visible;
+}
+#accountpopup ion-badge {
+    margin-top: -25px;
+    margin-right: -20px;
+    padding: 3px 5px;
+}
