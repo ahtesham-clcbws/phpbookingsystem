@@ -61,32 +61,9 @@ function searchPlace($data, $api){
     return $response;
 }
 
-
-
-
-
-
-
-
-function searchList($get)
+function userLogin($api, $login)
 {
-    if ($get) {
-        $data = 'http://localhost:8080/api/business/search.php?p=1&c=1&q=day&rating=0&p=1&limit=2';
-    } else {
-        $data = 'http://localhost:8080/api/business/search.php';
-    }
-    return file_get_contents($data);
-}
-
-function categoryList()
-{
-    $data = 'http://localhost:8080/api/business/category.php';
-    return file_get_contents($data);
-}
-
-function userLogin($login)
-{
-    $url = 'http://localhost:8080/api/login.php';
+    $url = $api.'/api/auth/user.login.php';
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $login);
@@ -98,7 +75,3 @@ function userLogin($login)
     return $response;
 }
 
-function afterLogin()
-{
-    'http://localhost:8080/api/login.php'->afterLogin();
-}

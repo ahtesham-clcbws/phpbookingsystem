@@ -261,17 +261,25 @@
 <script type="module">
 	import { popoverController } from '/assets/ionic/dist/ionic/index.esm.js';
 	window.popoverController = popoverController;
+    import { modalController } from '/assets/ionic/dist/ionic/index.esm.js';
+    window.modalController = modalController;
 </script>
+<script src="/assets/js/app.js"></script>
 
 <?php
-if (isset($pagestyles)){
+if (isset($pagestyles)) {
 	echo $pagestyles;
 }
-if (isset($pagescripts)){
+if (isset($pagescripts)) {
 	echo $pagescripts;
 }
+if (!isset($_SESSION['login'])) {
+	echo '<script src="/assets/js/login.js"></script>';
+}
+if (isset($_SESSION['login'])) {
+	echo '<script src="/assets/js/accountpopup.js"></script>';
+}
 ?>
-<script src="/assets/js/app.js"></script>
 </body>
 </html>
 

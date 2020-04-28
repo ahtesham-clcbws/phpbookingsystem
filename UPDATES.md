@@ -3,6 +3,16 @@
 > April 28 2020:-
 * Admin Panel Added
 
+* FrontEnd user login modal.
+* FrontEnd user login process done with API.
+* FrontEnd navbar buttons turns conditional.
+* FrontEnd login modal and functions only loaded in backend if not logged in.
+* FrontEnd screenshot updated.
+* FrontEnd some script and style partitioned into 2:-
+    * Some scripts and style loaded only for non-logged-in users.
+    * Some scripts and style loaded only for logged-in users.
+    * Some scripts and style only loaded for if user is a host. 
+
 > April 27 2020:-
 * Hosting place form added at (/account/hostplace)
     * Start php server in FrontEnd and see it in action (localhost/account/hostplace)
