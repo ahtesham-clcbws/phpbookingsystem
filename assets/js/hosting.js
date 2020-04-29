@@ -6,5 +6,11 @@ function setActive() {
 		}
 	}
 }
-
 window.onload = setActive;
+
+
+
+function openFirst() {
+    menuController.enable(true, 'first');
+    menuController.open('first');
+  }

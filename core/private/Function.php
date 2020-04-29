@@ -72,6 +72,22 @@ function userLogin($api, $login)
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
     $response = curl_exec($ch);
+    // $aaaa = json_decode($response);
+    // $decoded['userdata'] = array($aaaa);
     return $response;
 }
 
+function checkSession() {
+    $sId = session_id();
+    if (isset($session_object) && $session_object = $_SESSION[$sId]) {
+        return $session_object;
+    } elseif (!isset($session_object) || $session_object != $_SESSION[$sId]) {
+        // MATCH SESSION WITH DATABASE SESSION
+        // $_SESSION[$sId]['sessionInfo'][
+            // ['id]
+            // ['sessionID']
+            // ['createdAt']
+        // ]
+
+    }
+}

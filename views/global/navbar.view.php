@@ -14,7 +14,7 @@
                     </ion-button>
                     <?php if (isset($_SESSION['login']) == '1') { ?>
                         <ion-button>
-                            <ion-button href="/account/hosting" size="small" color="dark">Switch to hosting</ion-button>
+                            <ion-button href="/hosting" size="small" color="dark">Switch to hosting</ion-button>
                         </ion-button>
 
                         <ion-chip id="accountpopup" outline="true">

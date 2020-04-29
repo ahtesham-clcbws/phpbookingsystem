@@ -11,10 +11,10 @@
 
 
 <script type="module">
-	import { popoverController } from '/assets/ionic/dist/ionic/index.esm.js';
-	window.popoverController = popoverController;
     import { modalController } from '/assets/ionic/dist/ionic/index.esm.js';
     window.modalController = modalController;
+    import { menuController } from '/assets/ionic/dist/ionic/index.esm.js';
+    window.menuController = menuController;
 </script>
 
 <?php

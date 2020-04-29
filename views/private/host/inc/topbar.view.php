@@ -17,7 +17,7 @@
         <ion-buttons slot="primary">
             <ion-button color="danger" fill="outline">Create new listing</ion-button>
             <ion-avatar class="ion-margin-horizontal">
-                <img src="https://a0.muscache.com/defaults/user_pic-50x50.png?v=3">
+                <img onclick="openFirst()" src="https://a0.muscache.com/defaults/user_pic-50x50.png?v=3">
             </ion-avatar>
         </ion-buttons>
     </ion-toolbar>
